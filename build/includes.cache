@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4"
+  },
+  {
+    "Sourcefile": "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\sketch\\teams-mute.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
