@@ -1,10 +1,11 @@
 int button = 7;
-bool buttonState; // 0 is pressed. 1 is not pressed.
-bool previousButtonState = 1;
+bool buttonReading;
+bool buttonState = 1;         // 0 is pressed. 1 is not pressed.
+bool previousButtonState = 1; // init as 1
 int counter = 0;
 int counterDebounce = 0;
 unsigned long previousDebounceTime = 0;
-const long debounceDelay = 1000;
+const long debounceDelay = 50;
 
 void setup()
 {
@@ -15,20 +16,22 @@ void setup()
 
 void loop()
 {
-    // Serial.print("Previous Debounce: " + String(previousDebounceTime) + "; ");
-    buttonState = digitalRead(button);
-    if ((buttonState != previousButtonState) && (buttonState == 0))
+    buttonReading = digitalRead(button);
+    if (buttonReading != previousButtonState)
     {
-        counter++;
-        // Serial.print("Button Pressed unstable: " + String(counter) + "; ");
-        // Serial.print("Current Millis(): " + String(millis()) + "; ");
-        Serial.println();
-        if ((millis() - previousDebounceTime) > debounceDelay)
+        previousDebounceTime = millis();
+    }
+    if ((millis() - previousDebounceTime) > debounceDelay)
+    {
+        if (buttonReading != buttonState)
         {
-            counterDebounce++;
-            Serial.println("Button Press Debounced: " + String(counterDebounce));
-            previousDebounceTime = millis();
+            buttonState = buttonReading;
+            if (buttonState == 0)
+            {
+                counterDebounce++;
+                Serial.println("Button Press Debounced: " + String(counterDebounce));
+            }
         }
-    };
-    previousButtonState = buttonState;
+    }
+    previousButtonState = buttonReading;
 };
