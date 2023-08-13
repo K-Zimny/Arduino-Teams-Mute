@@ -1,11 +1,25 @@
+/*-------------------------------------------------
+Teams Mute Button
+Ken Zimny
+V1
+-------------------------------------------------*/
+
+// ---------- Define Variables ---------- //
+
+// Button
 int button = 7;
+bool buttonState = 1;
 bool buttonReading;
-bool buttonState = 1;         // 0 is pressed. 1 is not pressed.
-bool previousButtonState = 1; // init as 1
-int counter = 0;
+bool previousButtonReading;
+
+// Counter
 int counterDebounce = 0;
-unsigned long previousDebounceTime = 0;
+
+// Debounce
+unsigned long previousMillisTime = 0;
 const long debounceDelay = 50;
+
+// ---------- Setup ---------- //
 
 void setup()
 {
@@ -14,18 +28,26 @@ void setup()
     Serial.begin(115200);
 }
 
+// ---------- Loop ---------- //
+
 void loop()
 {
+    // Read our button pin.
     buttonReading = digitalRead(button);
-    if (buttonReading != previousButtonState)
+    // Test to see if our button was pressed and record that time.
+    if (buttonReading != previousButtonReading)
     {
-        previousDebounceTime = millis();
+        previousMillisTime = millis();
     }
-    if ((millis() - previousDebounceTime) > debounceDelay)
+    // Test if we have debounced the button press.
+    if ((millis() - previousMillisTime) > debounceDelay)
     {
+        // Test if the button was pressed
         if (buttonReading != buttonState)
         {
+            // Update the Button's State
             buttonState = buttonReading;
+            // Run on button press
             if (buttonState == 0)
             {
                 counterDebounce++;
@@ -33,5 +55,6 @@ void loop()
             }
         }
     }
-    previousButtonState = buttonReading;
+    // Record the button value of this loop
+    previousButtonReading = buttonReading;
 };
