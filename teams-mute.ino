@@ -11,6 +11,7 @@ int button = 7;
 bool buttonState = 1;
 bool buttonReading;
 bool previousButtonReading;
+// bool buttonPressed;
 
 // Counter
 int counterDebounce = 0;
@@ -32,8 +33,23 @@ void setup()
 
 void loop()
 {
-    // Read our button pin.
+    readButtonPin();
+    if (buttonPressed())
+    {
+        sendKeystroke();
+    }
+};
+
+void readButtonPin()
+{
+    // Read our button pin value.
     buttonReading = digitalRead(button);
+}
+
+bool buttonPressed()
+{
+    // reset our button press
+    bool wasPressed = false;
     // Test to see if our button was pressed and record that time.
     if (buttonReading != previousButtonReading)
     {
@@ -47,14 +63,22 @@ void loop()
         {
             // Update the Button's State
             buttonState = buttonReading;
-            // Run on button press
             if (buttonState == 0)
             {
-                counterDebounce++;
-                Serial.println("Button Press Debounced: " + String(counterDebounce));
+                // Button has been pressed
+                wasPressed = true;
             }
         }
     }
     // Record the button value of this loop
     previousButtonReading = buttonReading;
+
+    // Return bool for wasPressed
+    return wasPressed;
 };
+
+void sendKeystroke()
+{
+    counterDebounce++;
+    Serial.println("Button Press Debounced: " + String(counterDebounce));
+}

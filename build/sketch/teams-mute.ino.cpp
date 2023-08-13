@@ -1,19 +1,40 @@
 #include <Arduino.h>
 #line 1 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+/*-------------------------------------------------
+Teams Mute Button
+Ken Zimny
+V1
+-------------------------------------------------*/
+
+// ---------- Define Variables ---------- //
+
+// Button
 int button = 7;
+bool buttonState = 1;
 bool buttonReading;
-bool buttonState; // 0 is pressed. 1 is not pressed.
 bool previousButtonReading;
-int counter = 0;
+// bool buttonPressed;
+
+// Counter
 int counterDebounce = 0;
+
+// Debounce
 unsigned long previousMillisTime = 0;
 const long debounceDelay = 50;
 
-#line 10 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+// ---------- Setup ---------- //
+
+#line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup();
-#line 17 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 34 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void loop();
-#line 10 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 43 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+void readButtonPin();
+#line 49 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+bool buttonPressed();
+#line 80 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+void sendKeystroke();
+#line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup()
 {
     pinMode(LED_BUILTIN, OUTPUT);
@@ -21,10 +42,27 @@ void setup()
     Serial.begin(115200);
 }
 
+// ---------- Loop ---------- //
+
 void loop()
 {
-    // Read our button pin.
+    readButtonPin();
+    if (buttonPressed())
+    {
+        sendKeystroke();
+    }
+};
+
+void readButtonPin()
+{
+    // Read our button pin value.
     buttonReading = digitalRead(button);
+}
+
+bool buttonPressed()
+{
+    // reset our button press
+    bool wasPressed = false;
     // Test to see if our button was pressed and record that time.
     if (buttonReading != previousButtonReading)
     {
@@ -33,20 +71,28 @@ void loop()
     // Test if we have debounced the button press.
     if ((millis() - previousMillisTime) > debounceDelay)
     {
+        // Test if the button was pressed
         if (buttonReading != buttonState)
         {
+            // Update the Button's State
             buttonState = buttonReading;
             if (buttonState == 0)
             {
-                counterDebounce++;
-                Serial.println("Button Press Debounced: " + String(counterDebounce));
-            }
-            else
-            {
-                Serial.println("else");
-                delay(1000);
+                // Button has been pressed
+                wasPressed = true;
             }
         }
     }
+    // Record the button value of this loop
     previousButtonReading = buttonReading;
+
+    // Return bool for wasPressed
+    return wasPressed;
 };
+
+void sendKeystroke()
+{
+    counterDebounce++;
+    Serial.println("Button Press Debounced: " + String(counterDebounce));
+}
+
