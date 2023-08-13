@@ -13,7 +13,7 @@ V1
 
 // Button
 int button = 7;
-bool buttonState = 1;
+bool buttonState = HIGH;
 bool buttonReading;
 bool previousButtonReading;
 // bool buttonPressed;
@@ -68,7 +68,7 @@ bool buttonPressed()
         {
             // Update the Button's State
             buttonState = buttonReading;
-            if (buttonState == 0)
+            if (buttonState == LOW)
             {
                 // Button has been pressed
                 wasPressed = true;
