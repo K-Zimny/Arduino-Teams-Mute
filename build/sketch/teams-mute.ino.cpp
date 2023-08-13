@@ -28,11 +28,11 @@ const long debounceDelay = 50;
 void setup();
 #line 34 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void loop();
-#line 43 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 45 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void readButtonPin();
-#line 49 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 51 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 bool buttonPressed();
-#line 80 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 84 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void sendKeystroke();
 #line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup()
@@ -53,6 +53,8 @@ void loop()
     }
 };
 
+// ---------- Functions ---------- //
+
 void readButtonPin()
 {
     // Read our button pin value.
@@ -63,6 +65,7 @@ bool buttonPressed()
 {
     // reset our button press
     bool wasPressed = false;
+    digitalWrite(LED_BUILTIN, LOW);
     // Test to see if our button was pressed and record that time.
     if (buttonReading != previousButtonReading)
     {
@@ -80,6 +83,7 @@ bool buttonPressed()
             {
                 // Button has been pressed
                 wasPressed = true;
+                digitalWrite(LED_BUILTIN, HIGH);
             }
         }
     }

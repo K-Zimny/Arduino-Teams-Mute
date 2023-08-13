@@ -45,6 +45,8 @@ void loop()
     }
 };
 
+// ---------- Functions ---------- //
+
 void readButtonPin()
 {
     // Read our button pin value.
@@ -55,6 +57,7 @@ bool buttonPressed()
 {
     // reset our button press
     bool wasPressed = false;
+    digitalWrite((13u), LOW);
     // Test to see if our button was pressed and record that time.
     if (buttonReading != previousButtonReading)
     {
@@ -72,6 +75,7 @@ bool buttonPressed()
             {
                 // Button has been pressed
                 wasPressed = true;
+                digitalWrite((13u), HIGH);
             }
         }
     }

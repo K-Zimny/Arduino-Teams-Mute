@@ -52,6 +52,7 @@ bool buttonPressed()
 {
     // reset our button press
     bool wasPressed = false;
+    digitalWrite(LED_BUILTIN, LOW);
     // Test to see if our button was pressed and record that time.
     if (buttonReading != previousButtonReading)
     {
@@ -69,6 +70,7 @@ bool buttonPressed()
             {
                 // Button has been pressed
                 wasPressed = true;
+                digitalWrite(LED_BUILTIN, HIGH);
             }
         }
     }
