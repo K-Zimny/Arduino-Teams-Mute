@@ -90,10 +90,10 @@
    "-iprefixC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2",
    "@C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4/includes.txt",
    "-o",
-   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\core\\tmp_gen_c_files\\pin_data.c.o",
-   "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\pin_data.c"
+   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\core\\tmp_gen_c_files\\common_data.c.o",
+   "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\common_data.c"
   ],
-  "file": "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\pin_data.c"
+  "file": "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\common_data.c"
  },
  {
   "directory": "c:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute",
@@ -136,10 +136,10 @@
    "-iprefixC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2",
    "@C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4/includes.txt",
    "-o",
-   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\core\\tmp_gen_c_files\\common_data.c.o",
-   "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\common_data.c"
+   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\core\\tmp_gen_c_files\\pin_data.c.o",
+   "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\pin_data.c"
   ],
-  "file": "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\common_data.c"
+  "file": "C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4\\tmp_gen_c_files\\pin_data.c"
  },
  {
   "directory": "c:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute",
