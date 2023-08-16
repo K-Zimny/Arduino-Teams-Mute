@@ -6,6 +6,10 @@ Ken Zimny
 V1
 -------------------------------------------------*/
 
+// ---------- Include Libraries ---------- //
+
+#include <Keyboard.h>
+
 // ---------- Define Variables ---------- //
 
 // Button
@@ -14,31 +18,29 @@ bool buttonState = HIGH;
 bool buttonReading;
 bool previousButtonReading;
 
-// Counter
-int counterDebounce = 0;
-
 // Debounce
 unsigned long previousMillisTime = 0;
 const long debounceDelay = 50;
 
 // ---------- Setup ---------- //
 
-#line 24 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup();
-#line 33 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 35 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void loop();
-#line 44 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 46 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void readButtonPin();
-#line 50 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 52 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 bool buttonPressed();
-#line 86 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
-void sendKeystroke();
-#line 24 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 88 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+void sendKeystroke(char key);
+#line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup()
 {
+    // Serial.begin(115200);
+    // Keyboard.begin();
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(button, INPUT_PULLUP);
-    Serial.begin(115200);
 }
 
 // ---------- Loop ---------- //
@@ -48,7 +50,7 @@ void loop()
     readButtonPin();
     if (buttonPressed())
     {
-        sendKeystroke();
+        sendKeystroke('K');
     }
 };
 
@@ -96,9 +98,11 @@ bool buttonPressed()
     return wasPressed;
 };
 
-void sendKeystroke()
+void sendKeystroke(char key)
 {
-    counterDebounce++;
-    Serial.println("Button Press Debounced: " + String(counterDebounce));
+    Keyboard.begin();
+    Keyboard.press(key);
+    Keyboard.releaseAll();
+    Keyboard.end();
 }
 

@@ -4,6 +4,10 @@ Ken Zimny
 V1
 -------------------------------------------------*/
 
+// ---------- Include Libraries ---------- //
+
+#include <Keyboard.h>
+
 // ---------- Define Variables ---------- //
 
 // Button
@@ -11,9 +15,6 @@ int button = 7;
 bool buttonState = HIGH;
 bool buttonReading;
 bool previousButtonReading;
-
-// Counter
-int counterDebounce = 0;
 
 // Debounce
 unsigned long previousMillisTime = 0;
@@ -23,9 +24,9 @@ const long debounceDelay = 50;
 
 void setup()
 {
+    Serial.begin(115200);
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(button, INPUT_PULLUP);
-    Serial.begin(115200);
 }
 
 // ---------- Loop ---------- //
@@ -35,7 +36,7 @@ void loop()
     readButtonPin();
     if (buttonPressed())
     {
-        sendKeystroke();
+        sendKeystroke('K');
     }
 };
 
@@ -83,8 +84,11 @@ bool buttonPressed()
     return wasPressed;
 };
 
-void sendKeystroke()
+void sendKeystroke(char key)
+// Press and release all keys
 {
-    counterDebounce++;
-    Serial.println("Button Press Debounced: " + String(counterDebounce));
+    Keyboard.begin();
+    Keyboard.press(key);
+    Keyboard.releaseAll();
+    Keyboard.end();
 }

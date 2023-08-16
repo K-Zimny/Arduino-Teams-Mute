@@ -1,5 +1,6 @@
-C:\Users\Ken\Documents\Code\Arduino\teams-mute\build\sketch\teams-mute.ino.cpp.o: \
- C:\Users\Ken\Documents\Code\Arduino\teams-mute\build\sketch\teams-mute.ino.cpp \
+C:\Users\Ken\Documents\Code\Arduino\teams-mute\build\libraries\HID\HID.cpp.o: \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\libraries\HID\HID.cpp \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\libraries\HID\HID.h \
  C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\cores\arduino/Arduino.h \
  C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\cores\arduino/api/ArduinoAPI.h \
  C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\cores\arduino/api/Binary.h \
@@ -86,5 +87,28 @@ C:\Users\Ken\Documents\Code\Arduino\teams-mute\build\sketch\teams-mute.ino.cpp.o
  C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\cores\arduino/api/deprecated-avr-comp/avr/dtostrf.h \
  C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\variants\UNOWIFIR4/pins_arduino.h \
  C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\cores\arduino/usb/USB.h \
- C:\Users\Ken\Documents\Arduino\libraries\Keyboard\src/Keyboard.h \
- C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\libraries\HID/HID.h
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/tusb.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_common.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/tusb_option.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_compiler.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2\variants\UNOWIFIR4/tusb_config.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_mcu.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_compiler.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_verify.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_types.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_debug.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_timeout.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/osal/osal.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_common.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/osal/osal_none.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_fifo.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/osal/osal.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/common/tusb_fifo.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/class/hid/hid.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/device/usbd.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/class/hid/hid_device.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/class/hid/hid.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/class/cdc/cdc_device.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/class/cdc/cdc.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/class/dfu/dfu_rt_device.h \
+ C:\Users\Ken\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.2/cores/arduino/tinyusb/class/dfu/dfu.h
