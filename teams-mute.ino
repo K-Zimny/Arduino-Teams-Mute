@@ -11,7 +11,6 @@ int button = 7;
 bool buttonState = HIGH;
 bool buttonReading;
 bool previousButtonReading;
-// bool buttonPressed;
 
 // Counter
 int counterDebounce = 0;
