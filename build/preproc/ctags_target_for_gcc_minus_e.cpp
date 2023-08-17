@@ -29,8 +29,7 @@ const long debounceDelay = 50;
 
 void setup()
 {
-    // Serial.begin(115200);
-    // Keyboard.begin();
+    SerialUSB.begin(115200);
     pinMode((13u), OUTPUT);
     pinMode(button, INPUT_PULLUP);
 }
@@ -91,6 +90,7 @@ bool buttonPressed()
 };
 
 void sendKeystroke(char key)
+// Press and release all keys
 {
     Keyboard.begin();
     Keyboard.press(key);

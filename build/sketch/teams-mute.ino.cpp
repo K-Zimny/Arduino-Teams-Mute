@@ -26,19 +26,18 @@ const long debounceDelay = 50;
 
 #line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup();
-#line 35 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 34 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void loop();
-#line 46 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 45 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void readButtonPin();
-#line 52 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 51 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 bool buttonPressed();
-#line 88 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 87 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void sendKeystroke(char key);
 #line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup()
 {
-    // Serial.begin(115200);
-    // Keyboard.begin();
+    Serial.begin(115200);
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(button, INPUT_PULLUP);
 }
@@ -99,6 +98,7 @@ bool buttonPressed()
 };
 
 void sendKeystroke(char key)
+// Press and release all keys
 {
     Keyboard.begin();
     Keyboard.press(key);
