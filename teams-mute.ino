@@ -34,10 +34,7 @@ void setup()
 void loop()
 {
     readButtonPin();
-    if (buttonPressed())
-    {
-        sendKeystroke('K');
-    }
+    buttonPressed();
 };
 
 // ---------- Functions ---------- //
@@ -70,10 +67,17 @@ bool buttonPressed()
                 // Button has been pressed
                 wasPressed = true;
                 digitalWrite(LED_BUILTIN, HIGH);
+                // Send keypress
+                Keyboard.begin();
+                Keyboard.press(KEY_LEFT_ALT);
+                Keyboard.press(' ');
             }
             else
             {
                 digitalWrite(LED_BUILTIN, LOW);
+                // Release All keys
+                Keyboard.releaseAll();
+                Keyboard.end();
             }
         }
     }
@@ -83,12 +87,3 @@ bool buttonPressed()
     // Return bool for wasPressed
     return wasPressed;
 };
-
-void sendKeystroke(char key)
-// Press and release all keys
-{
-    Keyboard.begin();
-    Keyboard.press(key);
-    Keyboard.releaseAll();
-    Keyboard.end();
-}

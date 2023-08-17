@@ -28,12 +28,10 @@ const long debounceDelay = 50;
 void setup();
 #line 34 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void loop();
-#line 45 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 42 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void readButtonPin();
-#line 51 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
+#line 48 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 bool buttonPressed();
-#line 87 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
-void sendKeystroke(char key);
 #line 25 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
 void setup()
 {
@@ -47,10 +45,7 @@ void setup()
 void loop()
 {
     readButtonPin();
-    if (buttonPressed())
-    {
-        sendKeystroke('K');
-    }
+    buttonPressed();
 };
 
 // ---------- Functions ---------- //
@@ -83,10 +78,17 @@ bool buttonPressed()
                 // Button has been pressed
                 wasPressed = true;
                 digitalWrite(LED_BUILTIN, HIGH);
+                // Send keypress
+                Keyboard.begin();
+                Keyboard.press(KEY_LEFT_ALT);
+                Keyboard.press(' ');
             }
             else
             {
                 digitalWrite(LED_BUILTIN, LOW);
+                // Release All keys
+                Keyboard.releaseAll();
+                Keyboard.end();
             }
         }
     }
@@ -96,13 +98,4 @@ bool buttonPressed()
     // Return bool for wasPressed
     return wasPressed;
 };
-
-void sendKeystroke(char key)
-// Press and release all keys
-{
-    Keyboard.begin();
-    Keyboard.press(key);
-    Keyboard.releaseAll();
-    Keyboard.end();
-}
 
