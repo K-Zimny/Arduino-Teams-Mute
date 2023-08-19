@@ -149,11 +149,11 @@
    "-IC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\libraries\\HID",
    "-iprefixC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2",
    "@C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4/includes.txt",
-   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_fr_FR.cpp",
+   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_en_US.cpp",
    "-o",
-   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_fr_FR.cpp.o"
+   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_en_US.cpp.o"
   ],
-  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_fr_FR.cpp"
+  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_en_US.cpp"
  },
  {
   "directory": "c:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute",
@@ -201,11 +201,11 @@
    "-IC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\libraries\\HID",
    "-iprefixC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2",
    "@C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4/includes.txt",
-   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_sv_SE.cpp",
+   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_fr_FR.cpp",
    "-o",
-   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_sv_SE.cpp.o"
+   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_fr_FR.cpp.o"
   ],
-  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_sv_SE.cpp"
+  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_fr_FR.cpp"
  },
  {
   "directory": "c:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute",
@@ -305,11 +305,11 @@
    "-IC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\libraries\\HID",
    "-iprefixC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2",
    "@C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4/includes.txt",
-   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_da_DK.cpp",
+   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_sv_SE.cpp",
    "-o",
-   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_da_DK.cpp.o"
+   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_sv_SE.cpp.o"
   ],
-  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_da_DK.cpp"
+  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_sv_SE.cpp"
  },
  {
   "directory": "c:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute",
@@ -409,11 +409,11 @@
    "-IC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\libraries\\HID",
    "-iprefixC:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2",
    "@C:\\Users\\Ken\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\renesas_uno\\1.0.2\\variants\\UNOWIFIR4/includes.txt",
-   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_en_US.cpp",
+   "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_da_DK.cpp",
    "-o",
-   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_en_US.cpp.o"
+   "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\build\\libraries\\Keyboard\\KeyboardLayout_da_DK.cpp.o"
   ],
-  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_en_US.cpp"
+  "file": "C:\\Users\\Ken\\Documents\\Arduino\\libraries\\Keyboard\\src\\KeyboardLayout_da_DK.cpp"
  },
  {
   "directory": "c:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute",
