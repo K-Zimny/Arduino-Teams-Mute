@@ -1,4 +1,17 @@
 #line 1 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\.vscode\\settings.json"
 {
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "cSpell.words": [
+        "Unmute"
+    ],
+    "files.associations": {
+        "*.ino": "arduino-output",
+        "array": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp"
+    }
 }

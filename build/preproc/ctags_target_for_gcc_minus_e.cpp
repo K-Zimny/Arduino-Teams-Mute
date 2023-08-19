@@ -9,21 +9,23 @@ V1
 
 -------------------------------------------------*/
 # 7 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino"
-// ---------- Include Libraries ---------- //
+# 8 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino" 2
 
-# 10 "C:\\Users\\Ken\\Documents\\Code\\Arduino\\teams-mute\\teams-mute.ino" 2
+// Buttons
+struct Button
+{
+    int input;
+    bool state;
+    bool reading;
+    bool previousReading;
+    unsigned long previousMillis;
+};
 
-// ---------- Define Variables ---------- //
-
-// Button
-int button = 7;
-bool buttonState = HIGH;
-bool buttonReading;
-bool previousButtonReading;
-
-// Debounce
-unsigned long previousMillisTime = 0;
-const long debounceDelay = 50;
+Button tempUnmute = {7, HIGH, false, false, 0};
+Button unmute = {5, HIGH, false, false, 0};
+Button video = {4, HIGH, false, false, 0};
+Button hand = {3, HIGH, false, false, 0};
+Button end = {2, HIGH, false, false, 0};
 
 // ---------- Setup ---------- //
 
@@ -31,64 +33,76 @@ void setup()
 {
     SerialUSB.begin(115200);
     pinMode((13u), OUTPUT);
-    pinMode(button, INPUT_PULLUP);
+    pinMode(tempUnmute.input, INPUT_PULLUP);
+    pinMode(unmute.input, INPUT_PULLUP);
+    pinMode(video.input, INPUT_PULLUP);
+    pinMode(hand.input, INPUT_PULLUP);
+    pinMode(end.input, INPUT_PULLUP);
 }
 
 // ---------- Loop ---------- //
 
 void loop()
 {
-    readButtonPin();
-    buttonPressed();
+    if (buttonPressed(tempUnmute))
+        holdKeypress('t');
+    if (buttonPressed(unmute))
+        sendKeypress('m');
+    if (buttonPressed(video))
+        sendKeypress('v');
+    if (buttonPressed(hand))
+        sendKeypress('h');
+    if (buttonPressed(end))
+        sendKeypress('e');
 };
 
 // ---------- Functions ---------- //
 
-void readButtonPin()
+void sendKeypress(char key)
 {
-    // Read our button pin value.
-    buttonReading = digitalRead(button);
-}
+    Keyboard.begin();
+    Keyboard.press(key);
+    endKeypress();
+};
+void holdKeypress(char key)
+{
+    Keyboard.begin();
+    Keyboard.press(key);
+};
+void endKeypress()
+{
+    Keyboard.releaseAll();
+    Keyboard.end();
+};
 
-bool buttonPressed()
+bool buttonPressed(Button &btn)
 {
-    // reset our button press
-    bool wasPressed = false;
-    // Test to see if our button was pressed and record that time.
-    if (buttonReading != previousButtonReading)
+    bool firstPress = false;
+    btn.reading = digitalRead(btn.input);
+    // Debounce
+    if (btn.reading != btn.previousReading)
     {
-        previousMillisTime = millis();
+        btn.previousMillis = millis();
     }
-    // Test if we have debounced the button press.
-    if ((millis() - previousMillisTime) > debounceDelay)
+    if ((millis() - btn.previousMillis) > 50) // Debounce Delay
     {
-        // Test if the button was pressed
-        if (buttonReading != buttonState)
+        if (btn.reading != btn.state)
         {
-            // Update the Button's State
-            buttonState = buttonReading;
-            if (buttonState == LOW)
+            btn.state = btn.reading;
+            if (btn.state == LOW)
             {
                 // Button has been pressed
-                wasPressed = true;
+                firstPress = true;
                 digitalWrite((13u), HIGH);
-                // Send keypress
-                Keyboard.begin();
-                Keyboard.press(0x82);
-                Keyboard.press(' ');
             }
             else
             {
                 digitalWrite((13u), LOW);
-                // Release All keys
-                Keyboard.releaseAll();
-                Keyboard.end();
+                endKeypress();
             }
         }
     }
-    // Record the button value of this loop
-    previousButtonReading = buttonReading;
+    btn.previousReading = btn.reading;
 
-    // Return bool for wasPressed
-    return wasPressed;
+    return firstPress;
 };
