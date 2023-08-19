@@ -1,7 +1,4 @@
 {
-    "sketch": "teams-mute.ino",
-    "output": "build",
     "board": "arduino:renesas_uno:unor4wifi",
-    "port": "COM3",
-    "programmer": "stlink"
+    "port": "COM3"
 }
