@@ -33,41 +33,50 @@ void setup()
     pinMode(video.input, INPUT_PULLUP);
     pinMode(hand.input, INPUT_PULLUP);
     pinMode(end.input, INPUT_PULLUP);
-}
+};
 
 // ---------- Loop ---------- //
 
 void loop()
 {
     if (buttonPressed(tempUnmute))
-        holdKeypress('t');
+    {
+        // Option + Spacebar
+        Keyboard.press(KEY_LEFT_ALT); // Option
+        Keyboard.press(' ');
+    };
     if (buttonPressed(unmute))
-        sendKeypress('m');
+    {
+        // Command + Shift + M
+        Keyboard.press(KEY_LEFT_GUI); // Command
+        Keyboard.press(KEY_LEFT_SHIFT);
+        Keyboard.press('m');
+        Keyboard.releaseAll();
+    };
     if (buttonPressed(video))
-        sendKeypress('v');
+    {
+        // Command + Shift + O
+        Keyboard.press(KEY_LEFT_GUI); // Command
+        Keyboard.press(KEY_LEFT_SHIFT);
+        Keyboard.press('o');
+        Keyboard.releaseAll();
+    };
     if (buttonPressed(hand))
-        sendKeypress('h');
+    {
+        // Command + Shift + K
+        Keyboard.press(KEY_LEFT_GUI); // Command
+        Keyboard.press(KEY_LEFT_SHIFT);
+        Keyboard.press('k');
+        Keyboard.releaseAll();
+    };
     if (buttonPressed(end))
-        sendKeypress('e');
-};
-
-// ---------- Functions ---------- //
-
-void sendKeypress(char key)
-{
-    Keyboard.begin();
-    Keyboard.press(key);
-    endKeypress();
-};
-void holdKeypress(char key)
-{
-    Keyboard.begin();
-    Keyboard.press(key);
-};
-void endKeypress()
-{
-    Keyboard.releaseAll();
-    Keyboard.end();
+    {
+        // Command + Shift + H
+        Keyboard.press(KEY_LEFT_GUI); // Command
+        Keyboard.press(KEY_LEFT_SHIFT);
+        Keyboard.press('h');
+        Keyboard.releaseAll();
+    };
 };
 
 bool buttonPressed(Button &btn)
@@ -87,13 +96,15 @@ bool buttonPressed(Button &btn)
             if (btn.state == LOW)
             {
                 // Button has been pressed
+                Keyboard.begin();
                 firstPress = true;
                 digitalWrite(LED_BUILTIN, HIGH);
             }
             else
             {
+                Keyboard.releaseAll();
+                Keyboard.end();
                 digitalWrite(LED_BUILTIN, LOW);
-                endKeypress();
             }
         }
     }
