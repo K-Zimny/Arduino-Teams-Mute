@@ -22,6 +22,9 @@ Button video = {4, HIGH, false, false, 0};
 Button hand = {3, HIGH, false, false, 0};
 Button end = {2, HIGH, false, false, 0};
 
+int counter;
+unsigned long lastMillis = 0;
+
 // ---------- Setup ---------- //
 
 void setup()
@@ -77,6 +80,29 @@ void loop()
         Keyboard.press('h');
         Keyboard.releaseAll();
     };
+
+    // if (counter == 1000)
+    // {
+    //     unsigned long time = millis();
+    //     Serial.print(time);
+    // }
+
+    long currentMillis = millis();
+    counter++;
+
+    /* By doing complex math, reading sensors, using the "delay" function,
+     *  etc you will increase the time required to finish the loop,
+     *  which will decrease the number of loops per second.
+     */
+
+    if (currentMillis - lastMillis > 1000)
+    {
+        Serial.print("Loops last second:");
+        Serial.println(counter);
+
+        lastMillis = currentMillis;
+        counter = 0;
+    }
 };
 
 bool buttonPressed(Button &btn)
@@ -96,14 +122,14 @@ bool buttonPressed(Button &btn)
             if (btn.state == LOW)
             {
                 // Button has been pressed
-                Keyboard.begin();
+                // Keyboard.begin();
                 firstPress = true;
                 digitalWrite(LED_BUILTIN, HIGH);
             }
             else
             {
-                Keyboard.releaseAll();
-                Keyboard.end();
+                // Keyboard.releaseAll();
+                // Keyboard.end();
                 digitalWrite(LED_BUILTIN, LOW);
             }
         }
